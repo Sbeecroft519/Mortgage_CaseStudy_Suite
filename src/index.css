@@ -1,0 +1,99 @@
+/* Copyright 2026 Stephen Beecroft | Thinkbot Marketing
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-cyan-50/20 to-slate-100;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg shadow-black/[0.04];
+  }
+
+  .glass-strong {
+    @apply bg-white/85 backdrop-blur-2xl border border-white/40 shadow-xl shadow-black/[0.06];
+  }
+
+  .glass-hover {
+    @apply transition-all duration-300 hover:bg-white/85 hover:shadow-xl hover:shadow-black/[0.08] hover:-translate-y-0.5;
+  }
+
+  .glass-accent {
+    @apply bg-cyan-700/5 backdrop-blur-xl border border-cyan-200/30 shadow-lg shadow-cyan-600/[0.04];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-cyan-700 text-white text-sm font-medium rounded-xl
+           transition-all duration-200 hover:bg-cyan-800 hover:shadow-lg hover:shadow-cyan-700/25 active:scale-[0.98]
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:bg-cyan-700 disabled:active:scale-100;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white/60 text-slate-700 text-sm font-medium rounded-xl
+           border border-slate-200/60 transition-all duration-200 hover:bg-white/80 hover:border-slate-300/60 active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-slate-600 text-sm font-medium rounded-xl
+           transition-all duration-200 hover:bg-slate-100/60 hover:text-slate-900 active:scale-[0.98];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-white/60 border border-slate-200/60 rounded-xl text-sm text-slate-900
+           placeholder:text-slate-400 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500/60 focus:bg-white/80;
+  }
+
+  .select-field {
+    @apply w-full px-4 py-2.5 bg-white/60 border border-slate-200/60 rounded-xl text-sm text-slate-900
+           transition-all duration-200 appearance-none
+           focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500/60 focus:bg-white/80;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-beginner {
+    @apply badge bg-emerald-100/80 text-emerald-700 border border-emerald-200/40;
+  }
+
+  .badge-intermediate {
+    @apply badge bg-amber-100/80 text-amber-700 border border-amber-200/40;
+  }
+
+  .badge-advanced {
+    @apply badge bg-rose-100/80 text-rose-700 border border-rose-200/40;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-700 to-teal-600;
+  }
+
+  .font-display {
+    font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
+  }
+}
